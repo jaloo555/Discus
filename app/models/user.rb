@@ -3,7 +3,7 @@ class User < ApplicationRecord
   before_validation :uniq_display_name!, on: :create
 
   def display_name=(value)
-    super(value&.strip)
+    super(value.strip)
   end
 
   # Include default devise modules. Others available are:

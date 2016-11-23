@@ -39,7 +39,9 @@
 
 .app-nav-auth {
   float: right;
-
+  .forumlink {
+    margin-right: 15px;
+  }
   @include thredded-media-mobile {
     font-size: 0;
 

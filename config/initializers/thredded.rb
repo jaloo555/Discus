@@ -42,7 +42,7 @@ Thredded.admin_column = :admin
 Thredded.content_visible_while_pending_moderation = true
 
 # Whether users that are following a topic are listed on topic page.
-Thredded.show_topic_followers = false
+Thredded.show_topic_followers = true
 
 # This model can be customized further by overriding a handful of methods on the User model.
 # For more information, see app/models/thredded/user_extender.rb.
@@ -80,7 +80,7 @@ Thredded.layout = 'application'
 # Thredded::ContentFormatter.whitelist[:elements] += %w(custom-element)
 
 # ==> User autocompletion (Private messages and @-mentions)
-# Thredded.autocomplete_min_length = 2 lower to 1 if have 1-letter names -- increase if you want
+Thredded.autocomplete_min_length = 1
 
 # ==> Error Handling
 # By default Thredded just renders a flash alert on errors such as Topic not found, or Login required.

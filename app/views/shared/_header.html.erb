@@ -1,5 +1,6 @@
 <header role="banner" class="app-header">
   <span class="app-nav-auth">
+    <%= link_to t('Forum'), thredded.root_path ,{ :class=>"forumlink" }  %>
     <% if current_user %>
         <%= link_to current_user.display_name, user_path(current_user) %>
         |
@@ -10,4 +11,5 @@
     <% end %>
   </span>
   <a class="app-nav-logo" href="/"><%= t 'brand.name' %></a>
+
 </header>

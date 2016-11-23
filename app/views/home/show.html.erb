@@ -1,28 +1,31 @@
-<h1>Welcome to your new Rails app with Thredded! 🎉</h1>
+<h1>Welcome to Discus! 🎉</h1>
 
-<% unless Rails.env.production? %>
-  <p>You can now:</p>
+<h3>Get started:</h3>
+<p>Go to the <%= link_to t('messageboard'), thredded.root_path %> and get started! </p>
+  <p>This platform has a few functions:</p>
 
   <ul>
     <li>
-      <p>Check out the
-        <b><%= link_to t('nav.forums'), thredded.root_path %></b>.
-      </p>
-    </li>
-    <li>
       <p>
-        <b><%= link_to 'Log in', new_user_session_path %></b> as
-        <code>admin@discus.com</code>
-        with password <code>123456</code>.
+        <code><b>HaCK club:</b></code>
+        Members from the HaCK club are encouraged to ask programming questions and share code/ ideas here!
       </p>
     </li>
     <li>
-      <p>Edit this page at <code>app/views/home/show.html.erb</code>.</p>
+      <p><b>AP Chemistry Questions:</b>
+        AP Chemistry questions or notes can be asked, answered and shared on the <%= link_to t('messageboard'), thredded.root_path %>. We can also message each other or check whose online to get help quicker and easier.
+      </p>
+    </li>
+    <li>
+      <p><b>Random Stuff:</b>
+        Anything cool is welcomed here!
+      </p>
     </li>
   </ul>
+ <hr>
 
-  <hr>
-  <p>Your app uses:</p>
+  <h3>Cool facts</h3>
+  <p>This forum runs on:</p>
   <ul>
     <li><%= ActiveRecord::Base.connection.adapter_name %> database.</li>
     <li>
@@ -31,18 +34,13 @@
     </li>
     <li>
       <a href="https://github.com/plataformatec/devise">Devise</a>
-      v<%= require 'devise/version'; Devise::VERSION %> for authentication.
+      4.2.0 for authentication.
     </li>
+
     <li>
       <a href="https://github.com/thredded/thredded">Thredded</a>
       v<%= Thredded::VERSION %> as the forums engine.
     </li>
-    <li>Sass for your styles.</li>
-    <li>RSpec for testing.</li>
   </ul>
-
-  Created with
-  <a href="https://github.com/thredded/thredded_create_app">
-    thredded_create_app
-  </a> v0.1.2.
-<% end %>
+  <hr>
+  <p>Built by <a href="https://chenchisan.com">Chi San Chen © 2016 - 2200</a></p>

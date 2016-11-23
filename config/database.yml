@@ -5,28 +5,23 @@ pool_size =
   ENV.fetch('WEB_CONCURRENCY', 3).to_i * ENV.fetch('MAX_THREADS', 5).to_i +
   # ActiveJob Async max thread pool size
   Etc.nprocessors
-ERB
-%>
+ERB %>
 
-defaults: &defaults
-  adapter: sqlite3
-  min_messages: WARNING
-  pool: <%= pool_size %>
-  timeout: 5000
-  encoding: utf8
 
 development:
-  <<: *defaults
-  database: db/development.sqlite3
+  adapter: postgresql
+  database: my_database_development
+  pool: 5
+  timeout: 5000
 
 test:
-  <<: *defaults
-  database: db/test.sqlite3
-
+  adapter: postgresql
+  database: my_database_test
+  pool: 5
+  timeout: 5000
 
 production:
-  <<: *defaults
-  encoding: utf8
-  min_messages: WARNING
-  url: <%= ENV['DATABASE_URL'].inspect if ENV['DATABASE_URL'] %>
-  database: <%= 'db/production.sqlite3' unless ENV['DATABASE_URL'] %>
+  adapter: postgresql
+  database: my_database_production
+  pool: 5
+  timeout: 5000

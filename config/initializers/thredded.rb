@@ -64,7 +64,7 @@ Thredded.messageboards_order = :position
 
 # ==> View Configuration
 # Set the layout for rendering the thredded views.
-Thredded.layout = 'thredded/application'
+Thredded.layout = 'application'
 
 # ==> Post Content Formatting
 # Customize the way Thredded handles post formatting.
@@ -108,3 +108,12 @@ Thredded.layout = 'thredded/application'
 #     'hi'
 #   end
 # end
+# frozen_string_literal: true
+Rails.application.config.to_prepare do
+  Thredded::ApplicationController.module_eval do
+    rescue_from Thredded::Errors::LoginRequired do |exception|
+      flash.now[:notice] = exception.message
+      render template: 'devise/sessions/new', status: :forbidden
+    end
+  end
+end
